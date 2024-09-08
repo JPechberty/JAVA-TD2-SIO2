@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.courses.javatd2sio2.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="521.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.courses.javatd2sio2.HelloController">
+    <children>
+        <BorderPane prefHeight="400.0" prefWidth="520.0">
+            <center>
+                <AnchorPane prefHeight="350.0" prefWidth="520.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSelectFileBtnClick" prefHeight="25.0" prefWidth="110.0" text="1 - Select file" />
+                        <Label fx:id="lblSelectedFile" layoutX="132.0" layoutY="18.0" prefHeight="17.0" prefWidth="273.0" />
+                        <Button fx:id="btnImportData" disable="true" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" onAction="#onImportBtnClick" prefHeight="25.0" prefWidth="110.0" text="2 - Import Data" />
+                        <Button disable="true" layoutX="14.0" layoutY="101.0" mnemonicParsing="false" onAction="#onNationalResultsBtnClicked" prefHeight="25.0" prefWidth="184.0" text="National Results" />
+                        <Button disable="true" layoutX="14.0" layoutY="175.0" mnemonicParsing="false" onAction="#onPollingStationResultsBtnClicked" prefHeight="26.0" prefWidth="185.0" text="See Results" />
+                        <ComboBox fx:id="cbCities" disable="true" layoutX="14.0" layoutY="136.0" prefHeight="26.0" prefWidth="186.0" promptText="Choose a polling station" />
+                        <TableView fx:id="tvResults" layoutX="231.0" layoutY="101.0" prefHeight="234.0" prefWidth="281.0">
+                            <columns>
+                                <TableColumn fx:id="tcCandidat" prefWidth="143.0" text="Candidat" />
+                                <TableColumn fx:id="tcNbVoix" prefWidth="137.0" text="Nb voix" />
+                            </columns>
+                        </TableView>
+                  <Label layoutX="132.0" layoutY="50.0" prefHeight="17.0" prefWidth="197.0" />
+                    </children>
+                </AnchorPane>
+            </center>
+            <top>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label prefHeight="29.0" prefWidth="268.0" text="Elections Results Analyzer">
+                            <font>
+                                <Font name="System Bold Italic" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>
